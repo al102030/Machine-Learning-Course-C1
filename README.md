@@ -104,4 +104,46 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - Test some Python sample code in Notebook
   - Talk about Jupyter NoteBook tools and ecosystem
   - Talk about Server component and markdown ability
-  -
+  - Open Jupyter NoteBook inside the terminal and check some codes
+
+- <span style="color: Red;">The Python Programming Language: <span style="color: #00bbcc;">Functions</span></span>
+
+  - Start by writing a simple function in your Jupyter NoteBook (`add_numbers`)
+  - Remember, Python is a Dynamically type language
+  - Jupyter NoteBook execute your code by sending it to the machine in the cloud
+  - After executing a cell at the end of NoteBook a new cell will be created
+  - Changing in one cell doesn't change any result in other cells befor running them again
+  - Write add_numbers function in more complex way
+
+- <span style="color: Red;">The Python Programming Language: <span style="color: #00bbcc;">Types and Sequences</span></span>
+
+  - `type` can return data or function as output
+  - We have three primitive type in Python
+    - Number
+    - String
+    - Boolean
+  - We are going to talk about three sequence or collection (Complex data structure) in Python
+    - List
+    - Tuple
+    - Dictionary
+  - Talk about primitive Types
+  - Talk about Tuple
+  - Talk about List
+  - Using `append()` function fo a list
+  - Loop over a list using for and while (index)
+  - Mathematical operators on lists
+  - Use the `in` operator to check if something is inside a list.
+  - Use bracket notation to slice a string
+  - `list[-1]` return the last element of the string
+  - `[:]` slicing is core to the Python Programming Language
+  - Slicing is going to be used in regular expression topic in text Mining
+  - We can concatenate two string using `+` operator
+  - Talk about `split()` method. `split` returns a list of all the words in a string, or a list split on a specific character.
+  - Make sure you convert objects to strings before concatenating.
+  - Dictionaries are labeled and unordered data structures
+  - Retrieve a value by using the indexing operator
+  - Assign new item to the Dictionary
+  - Iterate over all of the keys
+  - Iterate over all of the values / Iterate over all of the items in the list
+  - You can unpack a sequence into different variables
+  - Make sure the number of values you are unpacking matches the number of variables being assigned.

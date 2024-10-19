@@ -108,12 +108,16 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
 
 - <span style="color: Red;">The Python Programming Language: <span style="color: #00bbcc;">Functions</span></span>
 
+  - Python is a interpretation language and interpreter execute its code line by line
   - Start by writing a simple function in your Jupyter NoteBook (`add_numbers`)
   - Remember, Python is a Dynamically type language
   - Jupyter NoteBook execute your code by sending it to the machine in the cloud
+  - Python doesn't need any keyword for declaring a variable
+  - Python `None` is equal to `null` in JS (absence of a value)
   - After executing a cell at the end of NoteBook a new cell will be created
   - Changing in one cell doesn't change any result in other cells befor running them again
   - Write add_numbers function in more complex way
+  - In python we can assign a function to a variable
 
 - <span style="color: Red;">The Python Programming Language: <span style="color: #00bbcc;">Types and Sequences</span></span>
 
@@ -147,3 +151,20 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - Iterate over all of the values / Iterate over all of the items in the list
   - You can unpack a sequence into different variables
   - Make sure the number of values you are unpacking matches the number of variables being assigned.
+
+- <span style="color: Red;">The Python Programming Language: <span style="color: #00bbcc;">More on Strings</span></span>
+
+  - In python 3 strings are `unicode` (`UTF`) based (note limited 0-256 characters)
+  - Python 3 use it by default
+  - Python has a built in method for convenient string formatting
+  - Use format string method in the form of `placeholder` and its normal shape
+  - String manipulation is a big part of `data cleaning`
+
+- <span style="color: Red;">Python Demonstration: <span style="color: #00bbcc;">Reading and Writing CSV files</span></span>
+
+  - Iterating through a .CSV file to create a Dictionary
+  - Use `precision` to format print
+  - `csv.Dictreader` has read in each row of our csv file as a dictionary. `len` shows that our list is comprised of 234 dictionaries
+  - `keys` gives us the column names of our csv
+  - Similarly this is how to find the average hwy fuel economy across all cars
+  -

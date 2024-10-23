@@ -164,7 +164,13 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
 
   - Iterating through a .CSV file to create a Dictionary
   - Use `precision` to format print
-  - `csv.Dictreader` has read in each row of our csv file as a dictionary. `len` shows that our list is comprised of 234 dictionaries
+  - `csv.Dictreader` convert our csv file content to a list of dictionaries
+  - `len` shows that our list is comprised of 234 dictionaries
   - `keys` gives us the column names of our csv
   - Similarly this is how to find the average hwy fuel economy across all cars
-  -
+  - All values saved in the format of string inside the dictionary so we need to convert it to float and then we can sum all values together
+  - Also we can make a `set` of values of a specific field
+  - Do a complex example where we are grouping the cars by number of cylinder, and finding the average cty mpg for each group
+  - Use `set` to return the unique values for the class types in our dataset
+  - Do above example for highway field
+  - We can do all above things with `pandas` library in the easy way

@@ -163,7 +163,7 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
 - <span style="color: Red;">Python Demonstration: <span style="color: #00bbcc;">Reading and Writing CSV files</span></span>
 
   - Iterating through a .CSV file to create a Dictionary
-  - Use `precision` to format print
+  - Use iPython magic command `precision` to format floating point number for print
   - `csv.Dictreader` convert our csv file content to a list of dictionaries
   - `len` shows that our list is comprised of 234 dictionaries
   - `keys` gives us the column names of our csv
@@ -174,3 +174,34 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - Use `set` to return the unique values for the class types in our dataset
   - Do above example for highway field
   - We can do all above things with `pandas` library in the easy way
+
+- <span style="color: Red;">The Python Programming Language: <span style="color: #00bbcc;">Dates and Times</span></span>
+
+  - Lots of analysis you do relate to dates and times
+  - Dates and times can be saved in many different ways
+  - `time` returns the current time in seconds since the Epoch. (`January 1st, 1970`)
+  - Convert the timestamp to datetime using `.fromtimestamp` method
+  - Talk about Handy datetime attributes
+  - `timedelta` is a duration expressing the difference between two dates
+
+- <span style="color: Red;">The Python Programming Language: <span style="color: #00bbcc;">Objects and map()</span></span>
+
+  - Talk about classes in Python and Object Oriented Programming (OOP)
+  - Add a constructor is not necessary
+  - An example of a class in python
+  - The map function is one of the basis for functional programming in python
+  - `Functional programming` in Python is a paradigm that treats computation as the evaluation of mathematical functions. It focuses on avoiding changing states and mutable data, relying instead on pure functions that return new data `without modifying the input`
+    - `Pure Functions`: Functions that give the same output for the same input without side effects
+    - `Higher-Order Functions`: Functions that can take other functions as arguments or return them, such as `map()`, `filter()`, and `reduce()`
+    - The `map()` function in Python is used to apply a given `function` to all items in an `iterable` (like a list or tuple) and return a `map object` (which is an iterator) containing the results
+    - `map(function, iterable)`
+    - Example of mapping two lists (It returns object which is useful in dealing with big data) (`lazy evaluation`)
+
+- <span style="color: Red;">The Python Programming Language: <span style="color: #00bbcc;"> Lambda and List Comprehensions</span></span>
+
+  - A lambda function is a one-line anonymous function that we can pass to other functions
+  - Lambda function structure: `lambda parameter: expression`
+  - Lambdas are really much more limited than full function definition
+  - The return of a lambda is a function reference
+  - They are very useful for simple little data cleaning tasks
+  - Talk about list Comprehensions

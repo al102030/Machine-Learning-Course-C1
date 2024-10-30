@@ -205,3 +205,50 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - The return of a lambda is a function reference
   - They are very useful for simple little data cleaning tasks
   - Talk about list Comprehensions
+
+### <span style="color: #44cecc;">Numerical Python Library (NumPy)</span>
+
+- <span style="color: Red; font-weight:bold;">NumPy</span>
+
+  - `Numpy` is the fundamental package for numeric computing with Python
+  - We will talk about creating array with certain data types, manipulating array, selecting elements from arrays, and loading dataset into array
+  - `pandas` is a part of `Numpy` and it has a `high-performance data-centric` package
+  - In this part we talk about creating, manipulating, selecting, and loading a data set into an array
+  - Actually `array` is a list of objects
+  - To creating a array using pandas library we can use `array()` method
+  - `ndim` attribute return the dimension of our array
+  - Passing a list of list, create a `multi-dimension` array
+  - We can print out the length of each dimension by calling the `shape` attribute, which returns a tuple
+  - We can also check the type of items in the array by using `dtype` attribute
+  - `Array` method accepts all kind of valid data type as input
+  - Note that numpy automatically converts integers, like 5, up to floats, since there is no loss of precision
+  - Numpy will try and give you the best data type format possible to keep your data types `homogeneous`, which means all the same, in the array
+  - Sometimes we know the shape of an array that we want to create, but not what we want to be in it. `numpy` offers several functions to create arrays with initial placeholders, such as `zero's` or `one's`
+  - We can also generate an array with random numbers
+  - You'll see zeros, ones, and rand used quite often to create example arrays, especially in `stack-overflow` posts and other forums
+  - We can also create a sequence of `numbers` in an array with the `arrange()` function
+  - If we want to generate a sequence of `floats`, we can use the `linspace()` function
+  - the third argument is the total number of items you want to generate
+  - We can do many things on arrays, such as `mathematical manipulation` (addition, subtraction, square, exponents)
+  - We can also do `matrix manipulation` such as `product`, `transpose`, `inverse`, and so forth
+  - We can apply an operator on an array, and a `boolean array` will be returned for any element in the original, with True being emitted if it meets the condition and False otherwise
+  - Do it for checking items in the case of being even or odd
+  - If we want to do `elementwise product`, we use the `"*"` sign
+  - If we want to do `matrix product`, we use the `"@"` sign or use the `dot` function
+  - When manipulating arrays of different types, the type of the resulting array will correspond to the more general of the two types. This is called `upcasting`
+  - `Numpy` arrays have many interesting `aggregation functions` on them, such as `sum()`, `max()`, `min()`, and `mean()`
+  - or two dimensional arrays, we can do the same thing for each row or column
+  - By using `reshape()` method we can make multidimensional array
+  - We can load an image as matrix in notebook using numpy and manipulate it
+  - If we just wanted to invert this image we could use the numpy array to do so
+  - We can create a large shape image using `full` method which its items all to be the same
+
+- <span style="color: Red; font-weight:bold;">Indexing, Slicing and Iterating</span>
+
+  - `Indexing`, `slicing` and `iterating` are extremely important for data manipulation and analysis because these techinques allow us to select data based on conditions, and copy or update data
+  - A one-dimensional array, works in similar ways as a list.To get an element in a one-dimensional array, we simply use the offset index
+  - For multidimensional array, we need to use integer array indexing
+  - Boolean indexing allows us to select arbitrary elements based on conditions
+  - We can then place this array of booleans like a mask over the original array to return a one-dimensional array relating to the true values
+  - Slicing is a way to create a sub-array based on the original array
+  -

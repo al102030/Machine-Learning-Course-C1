@@ -251,4 +251,20 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - Boolean indexing allows us to select arbitrary elements based on conditions
   - We can then place this array of booleans like a mask over the original array to return a one-dimensional array relating to the true values
   - Slicing is a way to create a sub-array based on the original array
-  -
+  - For slicing we use `:`
+  - Slicing in one dimensional array and list are completely the same
+  - Slicing in two dimensional array is different and first argument is for rows and the second argument is for columns
+  - Modifying the sub array will consequently modify the original array
+
+- <span style="color: Red; font-weight:bold;">Trying Numpy with Datasets</span>
+
+  - To load a dataset in Numpy, we can use the `genfromtxt()` function
+  - We can specify data file name, delimiter (which is optional but often used), and number of rows
+  - The genfromtxt() function has a parameter called `dtype` for specifying data types of each column
+  - Without specifying the types, all types will be casted the same to the more general/precise type
+  - Also remember that for multidimensional arrays, the first argument refers to the row, and the second argument refers to the column, and if we just give one argument then we'll get a single dimensional list
+  - But if we wanted the same values but wanted to preserve that they sit in their own rows we would write `wines[:, 0:1]`
+  - We can then call the aggregation functions on this data
+
+- <span style="color: Red; font-weight:bold;">Manipulating Text with Regular Expression/span>
+  - T

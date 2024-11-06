@@ -267,4 +267,29 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - We can then call the aggregation functions on this data
 
 - <span style="color: Red; font-weight:bold;">Manipulating Text with Regular Expression/span>
-  - T
+- Actually regular expression is a pattern which you give to a regex processor with some source data. The processor then parses that source data using that pattern, and returns chunks of text back to the a data scientist or programmer for further manipulation
+- There's really three main reasons you would want to do this:
+  - to check whether a pattern exists within some source data
+  - to get all instances of a complex pattern from some source data
+  - to clean your source data using a pattern generally through string splitting.
+- Regexes are not trivial, but they are a foundational technique for data cleaning in data science applications, and a solid understanding of regexs will help you quickly and efficiently manipulate text data for further data science application
+- First we'll import the `re` module
+- To checking for conditionals, we can segment a string by tokenizing
+- The regex specification standard defines a markup language to describe patterns in text:
+- Lets start with anchors.
+- Anchors specify the start and/or the end of the string that you are trying to match
+- The caret character `^` means start
+- The dollar sign character `$` means end
+
+- <span style="color: Red; font-weight:bold;">Patterns and Character Classes</span>
+- Talk more about patterns and start with character classes
+- You can also include a `range of characters`, which are ordered alphanumerically
+- You can write this pattern by using the `pipe` operator, which means `OR`
+- We can use the `caret` with the set operator to negate our results
+
+- <span style="color: Red; font-weight:bold;">Quantifiers</span>
+- `Quantifiers` are the number of times you want a pattern to be matched in order to match
+- quantifier is expressed as `e{m,n}`, where e is the expression or character we are matching, `m` is the `minimum number` of times you want it to matched, and `n` is the `maximum number` of times the item could be matched
+- It's important to note that the regex quantifier syntax does not allow you to deviate from the {m,n} pattern
+- we can use `\w` to match any letter, including digits and numbers
+- We can use an asterisk `*` to match 0 or more times

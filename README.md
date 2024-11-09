@@ -293,3 +293,53 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
 - It's important to note that the regex quantifier syntax does not allow you to deviate from the {m,n} pattern
 - we can use `\w` to match any letter, including digits and numbers
 - We can use an asterisk `*` to match 0 or more times
+
+- <span style="color: Red; font-weight:bold;">Groups</span>
+- you can actually match different patterns, called groups, at the same time, and then refer to the groups you want
+- we've seen that `findall()` returns strings, and `search()` and `match()` return individual Match objects
+- We use the function `finditer()` if we want a list of Match objects
+- We can get an individual group using `group(number)`
+- we can print out the whole dictionary for the item too, and see that the `[edit]` string is still in there
+- For that we use the syntax `(?P<name>)`, where the parenthesis starts the group, the `?P` indicates that this is an extension to basic regexes, and `<name>` is the dictionary key we want to use wrapped in `<>`
+- We can get the dictionary returned for the item with `.groupdict()`
+
+- <span style="color: Red; font-weight:bold;">Look-ahead and Look-behind</span>
+- We can isolate text which comes before the `[edit]` rendering, but we actually don't care about the `[edit]` text itself
+
+- <span style="color: Red; font-weight:bold;">Example: Wikipedia Data</span>
+- The `verbose` mode allows you to write multi-line regexes and increases readability
+- This means we can write our regex a bit more like code, and can even include comments with
+- Now when we call `finditer()` we just pass the `re.VERBOSE` flag as the last parameter
+
+- <span style="color: Red; font-weight:bold;">Example: New York Times and Hashtags</span>
+- So lets create a pattern. We want to include the hash sign first, then any number of alphanumeric characters. And we end when we see some whitespace
+
+- <span style="color: Red; font-weight:bold;">Part Two Reading Assignments (Optional)</span>
+- <span style="color: Blue; font-weight:bold;">Python for Data Analysis</span> by Wes McKinney (O’Reilly). Copyright 2017 Wes McKinney, 978-1-491-95766-0.
+
+  - Chapter Five: Getting started with pandas
+
+  - Chapter Seven: Data Cleaning and Preparation
+
+### <span style="color: #44cecc;">Pandas</span>
+
+- <span style="color: Red; font-weight:bold;">Introduction to Pandas</span>
+
+  - The pandas library is a powerful, open-source tool in Python designed for data manipulation and analysis
+  - It provides data structures, mainly the DataFrame and Series, to handle large datasets and perform operations such as cleaning, transforming, and analyzing data efficiently
+  - Pandas was created by `Wes McKinney` in 2008, and is an open source project under a very permissive license
+  - I want to take a moment here to introduce the question answersing site Stack Overflow. Stack Overflow is used broadly within the software development community to post questions about programming, programming languages, and programming toolkits
+  - In 2012 Wes McKinney wrote the definitive Pandas reference book called `Python for Data Analysis` and published by `O'Reilly`, and it's recently been update to a second edition. I consider this the go to book for understanding how Pandas works
+
+- <span style="color: Red; font-weight:bold;">The Series Data Structure</span>
+
+  - The series is one of the core data structures in pandas
+  - You think of it a cross between a list and a dictionary
+  - The items are all stored in an order and there's labels with which you can retrieve them
+  - As you might expect, you can create a series by passing in a list of values. When you do this, Pandas automatically assigns an index starting with zero and sets the name of the series to None. Let's work on an example of this
+  - Now we just call the `Series` function in pandas and pass in the students
+  - We see here that the pandas has automatically identified the type of data in this Series as "object" and set the `dytpe` parameter as appropriate
+  - The most important is how Numpy and thus pandas handle missing data
+  - pandas does some type `conversion`. If we create a list of strings and we have one element, a None type, pandas inserts it as a None and uses the type object for the underlying array
+  - if we create a list of numbers, integers or floats, and put in the None type, pandas automatically converts this to a special floating point value designated as `NaN`, which stands for `"Not a Number"`
+  - `NaN` is `*NOT* equivalent` to `None` and when we try the equality test, the result is False

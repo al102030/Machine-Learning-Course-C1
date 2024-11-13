@@ -342,4 +342,33 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - The most important is how Numpy and thus pandas handle missing data
   - pandas does some type `conversion`. If we create a list of strings and we have one element, a None type, pandas inserts it as a None and uses the type object for the underlying array
   - if we create a list of numbers, integers or floats, and put in the None type, pandas automatically converts this to a special floating point value designated as `NaN`, which stands for `"Not a Number"`
+  - So when you're wondering why the list of integers you put into a Series is not floats, it's probably because there is some missing data
   - `NaN` is `*NOT* equivalent` to `None` and when we try the equality test, the result is False
+  - You need to use special functions to test for the presence of not a number, such as the Numpy library `isnan()`
+  - A series can be created directly from `dictionary` data
+  - Once the series has been created, we can get the index object using the `index` attribute
+  - We can create a more complex type of data, say, a list of tuples
+  - if your list of values in the `index` object are `not aligned` with the `keys` in your dictionary, pandas overrides the automatic creation to favor only and all of the indices values that you provided
+
+- <span style="color: Red; font-weight:bold;">Querying a Series</span>
+
+  - A pandas Series can be queried either by the index position or the index label
+  - To query by numeric location, starting at zero, use the `iloc` `attribute`
+  - To query by the index label, you can use the `loc` `attribute`
+  - If you pass in an `integer` parameter, the operator will behave as if you want it to query via the `iloc` attribute
+  - If you pass in an `object`, it will query as if you wanted to use the label based `loc` attribute
+  - To pass a list of integers the safer option is to be more explicit and use the iloc or loc attributes directly
+  - Use `numpy` in the case of trying to find a certain number, or summarizing data or transforming the data in some way
+  - The `ipython` interpreter has something called `magic functions` begin with a percentage (`%`) sign
+  - If we type this sign and then hit the Tab key, you can see a list of the available magic functions
+  - Note that in order to use a cellular magic function, it has to be the first line in the cell
+  - `Vectorization` is faster than typical coding way
+  - A Related feature in pandas and nummy is called `broadcasting`
+  - With broadcasting, you can apply an operation to every value in the series, changing the series
+  - Pandas does support iterating through a series much like a dictionary, allowing you to `unpack values` easily
+  - We can use the `items()` function which returns a label and value
+  - The typical mathematical operations you would expect are vectorized, and the numpy documentation outlines what it takes to create vectorized functions of your own
+  - The `.loc` attribute lets you not only modify data in place, but also add new data as well
+  - We can append all of the data in this new Series to the first using the `._append()`
+  - the append method doesn't actually change the underlying Series objects, it instead returns a new series which is made up of the two appended together
+  - when we query the appended series for `Ali`, we don't get a single value, but a `series` itself

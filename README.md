@@ -372,3 +372,45 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - We can append all of the data in this new Series to the first using the `._append()`
   - the append method doesn't actually change the underlying Series objects, it instead returns a new series which is made up of the two appended together
   - when we query the appended series for `Ali`, we don't get a single value, but a `series` itself
+
+- <span style="color: Red; font-weight:bold;">The DataFrame</span>
+
+  - The DataFrame data structure is the heart of the Panda's library
+  - It's a primary object that you'll be working with in data analysis and cleaning tasks
+  - The DataFrame is conceptually a `two-dimensional` series object, where there's an index and multiple columns of content, with each column having a label
+  - In the first method of creating a DataFrame we can create series and use theme with indexes
+  - We can pass in our index values as a second arguments
+  - An alternative method is that you could use a list of dictionaries, where each dictionary represents a row of data
+  - Similar to the series, we can extract data using the `.iloc` and `.loc` attributes
+  - Because the DataFrame is two-dimensional, passing a single value to the loc indexing operator will return `the series` if there's only one row to return
+  - Remember that the indices and column names along either axes horizontal or vertical, could be `non-unique`
+  - In Panda's DataFrame you can quickly select data based on multiple axes
+  - We could `transpose` the matrix. This pivots all of the rows into columns and all of the columns into rows, and is done with the `T` attribute
+  - Panda reserves the indexing operator directly on the DataFrame for column selection
+  - You get a key error if you try and use `.loc` with a column name
+  - you can `chain operations` together
+  - Chaining, by indexing on the return type of another index, can come with some `costs` and is best `avoided` if you can use another approach
+  - Chaining tends to cause Pandas to return a copy of the DataFrame instead of a view on the DataFrame
+  - `.loc` does row selection, and it can take two parameters, the row index and the list of column names. The .loc attribute also supports `slicing`
+  - It's easy to delete data in Series and DataFrames, and we can use the `drop` function to do so
+  - The drop function doesn't change the DataFrame by default
+  - `Drop` has two optional parameters:
+    - The first is called `inplace`, and if it's set to true, the DataFrame will be updated in place, instead of a copy being returned
+    - The second parameter is the `axes`, which should be dropped
+  - There is a second way to drop a column, and that's directly through the use of the indexing operator, using the `del` keyword
+  - This way of dropping data, however, takes immediate effect on the DataFrame and does not return a view
+  - `Adding` a new column to the DataFrame is as easy as assigning it to some value using the indexing operator
+
+- <span style="color: Red; font-weight:bold;">DataFrame Indexing and Loading</span>
+
+  - Use one shell command here called `cat`, for `concatenate`, which just outputs the contents of a file
+  - Pandas mades it easy to turn a CSV into a dataframe, we just call `read_csv()`
+  - We can set the serial `no.` as the index if we want to by using the `index_col`
+  - In Pandas, we can use the `rename()` function It takes a parameter called columns, and we need to pass into a dictionary which the keys are the old column name and the value is the corresponding new column name
+  - If some columns don't change we need to make sure we got all the column names correct We can use the columns attribute of dataframe to get a list
+  - Python comes with a handy string function to strip white space called `strip()`
+  - When we pass this in to rename we pass the function as the `mapper` parameter, and then indicate whether the axis should be columns or index (row labels)
+  - The rename function isn't modifying the DataFrame
+  - We can also use the `df.columns` attribute by assigning to it a list of column names which will directly rename the columns
+  - This will directly modify the original DataFrame and is very efficient especially when you have a lot of columns and you only want to change a few
+  - The CSV is by far the most common data format you'll run into, and an important one to know how to manipulate in pandas

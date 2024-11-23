@@ -447,3 +447,57 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - the `loc` attribute of the DataFrame can take multiple arguments. And it could query both the row and the columns. When you use a `MultiIndex`, you must provide the arguments in order by the level you wish to query
   - If you are interested in comparing two counties we can pass a list of tuples describing the indices we wish to query into loc
   - e need to provide two values as each element of our filtering list. Each tuple should have two elements, the first element being the first index and the second element being the second index
+
+- <span style="color: Red; font-weight:bold;">Missing Values</span>
+
+  - Missing values are pretty common in data cleaning activities
+  - if you are running a survey and a respondent didn't answer a question the missing value is actually an omission
+  - This kind of missing data is called `Missing at Random`
+  - There are other variables that might be used to `predict` the variable which is missing
+  - If there is no relationship to other variables, then we call this data Missing `Completely at Random (MCAR)`
+  - These are just two examples of missing data, and there are many more
+    - wasn't collected
+    - wouldn't make sense
+  - Most missing values are often formatted as `NaN`, `NULL`, `None`, or `N/A`
+  - Sometimes missing values are not labeled so clearly
+  - The pandas `read_csv()` function has a parameter called `na_values` to let us specify the form of missing values
+  - We can actually use the function `.isnull()` to create a boolean mask of the whole DataFrame
+  - Another useful operation is to be able to drop all of those rows which have any missing data, which can be done with the `dropna()` function
+  - One of the handy functions that Pandas has for working with missing values is the filling function, `fillna()`
+  - Note that the `inplace` attribute causes pandas to fill the values inline and does not return a copy of the DataFrame, but instead modifies the DataFrame you have
+  - The two common fill values are `ffill` and `bfill`
+    - `ffill` is for forward filling and it updates an na value for a particular cell with the value from the previous row
+    - `bfill` is backward filling, which is the opposite of `ffill`
+  - We can also do customized fill-in to replace values with the `replace()` function
+  - To replace using a regex we need to specify three parameter
+  - When you use statistical functions on DataFrames, these functions typically ignore missing values
+  - For instance if you try and calculate the mean value of a DataFrame, the underlying NumPy function will ignore missing values
+
+- <span style="color: Red; font-weight:bold;">Example: Manipulating DataFrames</span>
+
+  - Start with cleaning up that name into `firstname` and `lastname` using regex
+  - First we could make a copy of the President column
+  - The `apply()` function on a DataFrame will take some arbitrary function you have written and apply it to either a Series (a single column) or DataFrame across all rows or columns
+  - Now we just return the row and the pandas .apply() will take of merging them back into a DataFrame
+  - `.extract()` takes a regular expression as input and specifically requires you to set capture groups that correspond to the output columns you are interested in
+  - Now the `extract` function is built into the str attribute of the Series object, so we can call it using `Series.str.extract(pattern)`
+  - But if we name the groups we get named columns out
+  - We can just copy these into our main DataFrame if we want to
+  - We need to update this column to the write data type as well
+
+### <span style="color: #44cecc;">More Data Processing with Pandas</span>
+
+- <span style="color: Red; font-weight:bold;">Merging</span>
+
+  - We can bring multiple dataframe objects together, either by merging them horizontally, or by concatenating them vertically
+  - A Venn Diagram is traditionally used to show set membership
+  - In the Venn diagram, `Union` represents everyone in any circle
+  - In database terminology, this is called an `inner join`
+  - Or in set theory, the `intersection` represented in the Venn diagram as the overlapping parts of each circle
+  - If we want the union of these, we would call `merge()` passing in the DataFrame on the left and the DataFrame on the right and telling merge that we want it to use an outer join
+  - If we wanted to get the intersection, that is, just those who are a student AND a staff, we could set the how attribute to `inner`
+  - The first is when we would want to get a list of all staff regardless of whether they were students or not. But if they were students, we would want to get their student details as well
+  - To do this we would use a `left` join
+  - important to note the order of dataframes in this function: the first dataframe is the left dataframe and the second is the right
+  - we have a parameter called `on`, and we can assign a column that both dataframe has as the joining column
+  -

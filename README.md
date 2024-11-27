@@ -484,3 +484,55 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - But if we name the groups we get named columns out
   - We can just copy these into our main DataFrame if we want to
   - We need to update this column to the write data type as well
+
+### <span style="color: #44cecc;">More Data Processing with Pandas</span>
+
+- <span style="color: Red; font-weight:bold;">Merging</span>
+
+  - We can bring multiple dataframe objects together, either by merging them horizontally, or by concatenating them vertically
+  - A Venn Diagram is traditionally used to show set membership
+  - In the Venn diagram, `Union` represents everyone in any circle
+  - In database terminology, this is called an `outer join`
+  - Or in set theory, the `intersection` represented in the Venn diagram as the overlapping parts of each circle (`inner join`)
+  - If we want the union of these, we would call `merge()` passing in the DataFrame on the left and the DataFrame on the right and telling merge that we want it to use an outer join
+  - If we wanted to get the intersection, that is, just those who are a student AND a staff, we could set the how attribute to `inner`
+  - The first is when we would want to get a list of all staff regardless of whether they were students or not. But if they were students, we would want to get their student details as well (`Set Addition`)
+  - To do this we would use a `left` join
+  - important to note the order of dataframes in this function: the first dataframe is the left dataframe and the second is the right
+  - we have a parameter called `on`, and we can assign a column that both dataframe has as the joining column
+  - The merge function preserves this information, but appends an `_x` or `_y` to help differentiate between which index went with which column of data
+  - The `_x` is always the `left` DataFrame information, and the `_y` is always the `right` DataFrame information
+  - Talk about multi-indexing and multiple columns
+  - Joining dataframes through merging is incredibly common, and you'll need to know how to pull data from different sources, clean it, and join it for analysis
+  - Joining "horizontally", meaning we join on similar values in a column found in two dataframes
+  - Concatenating is joining "vertically", meaning we put dataframes on top or at the bottom of each other
+  - If you want to suppress some of the jupyter warning messages and just tell read_csv to ignore bad lines start the cell with a cell magic called `%%capture`
+  - Let's just put all three dataframes in a list and call that list frames and pass the list into the `concat()` function
+  - We pass in a list of keys that we want to correspond to the dataframes into the keys parameter
+  - If you are concatenating two dataframes that do not have identical columns, and choose the outer method, some cells will be `NaN`
+  - If you choose to do inner, then someobservations will be dropped due to `NaN` values
+
+- <span style="color: Red; font-weight:bold;">Pandas Idioms</span>
+
+  - The best solutions are celebrated as `Idiomatic Python` and there are lots of great examples of this on `StackOverflow` and other websites
+  - Panda's community have used the term `pandorable` for these idioms
+  - The general idea behind `method chaining` is that every method on an object returns a reference to that object
+  - You can condense many different operations on a DataFrame, for instance, into one line or at least one statement of code
+  - Here's a more traditional, `non-pandorable` way, of writing this and you might even be able to understand it better as a new person to the language
+  - In this case, you can actually time both methods and see which one runs faster
+  - Python has a wonderful function called `map`, which is sort of a basis for functional programming in the language
+  - Pandas has a similar function called `applymap`
+  - In `applymap`, you provide some function which should operate on each cell of a DataFrame, and the return set is itself a DataFrame
+  - We are often wanting to `map` across all of the rows in a DataFrame
+  - `Apply` takes the `function` and the `axis` on which to operate as parameters
+  - To apply across all rows, which is applying on all columns, you pass axis equal to `'columns'`
+  - Also we can add two new columns in the original dataframe to store min and max
+  - You might chain several apply calls with `lambdas` together to create a readable yet succinct data manipulation script
+  - A lambda is just an unnamed function in python, in this case it takes a single parameter, x, and returns a single value
+
+- <span style="color: Red; font-weight:bold;">Group By</span>
+
+  - Sometimes we want to select data based on groups and understand aggregated data on a group level
+  - Pandas has a `groupby()` function to speed up such task
+  - The idea behind the `groupby()` function is that it takes some dataframe, splits it into chunks based on some key values, applies computation on those chunks, then combines the results back together into another dataframe
+  -

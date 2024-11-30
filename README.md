@@ -533,6 +533,17 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
 - <span style="color: Red; font-weight:bold;">Group By</span>
 
   - Sometimes we want to select data based on groups and understand aggregated data on a group level
+  - Pandas allows us to iterate over every row in a dataframe, it is generally very slow to do s
   - Pandas has a `groupby()` function to speed up such task
   - The idea behind the `groupby()` function is that it takes some dataframe, splits it into chunks based on some key values, applies computation on those chunks, then combines the results back together into another dataframe
-  -
+  - 99% of the time, you'll use group by on one or more columns. But you can also provide a function to group by and use that to segment your data
+  - The pandas developers have three broad categories of data processing to happen during the apply step:
+    - `Aggregation` of group data
+    - `Transformation` of group data
+    - `Filtration` of group data
+  - The most straight forward apply step is the aggregation of data, and uses the method `agg()` on the groupby object
+  - `agg` we can pass in a dictionary of the columns we are interested in aggregating along with the function we are looking to apply to aggregate
+
+- <span style="color: Red; font-weight:bold;">Scales</span>
+
+  - S

@@ -535,15 +535,50 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - Sometimes we want to select data based on groups and understand aggregated data on a group level
   - Pandas allows us to iterate over every row in a dataframe, it is generally very slow to do s
   - Pandas has a `groupby()` function to speed up such task
-  - The idea behind the `groupby()` function is that it takes some dataframe, splits it into chunks based on some key values, applies computation on those chunks, then combines the results back together into another dataframe
+  - The idea behind the `groupby()` function is that it takes some dataframe, splits it into chunks based on some key values, applies computation on those chunks, then combines the results back together into another dataframe (`split-apply-combine pattern`)
   - 99% of the time, you'll use group by on one or more columns. But you can also provide a function to group by and use that to segment your data
+  - This time I didn't pass in a column name to `groupby()`
+  - To group data by multiple columns, first approach might be to promote them to a `multiindex` and just call `groupby()`
+  - Also we can apply conditions and criteria on our grouping policy using functions
   - The pandas developers have three broad categories of data processing to happen during the apply step:
     - `Aggregation` of group data
     - `Transformation` of group data
     - `Filtration` of group data
   - The most straight forward apply step is the aggregation of data, and uses the method `agg()` on the groupby object
   - `agg` we can pass in a dictionary of the columns we are interested in aggregating along with the function we are looking to apply to aggregate
+  - `Transformation` is different from aggregation. It broadcasts the function you supply over the grouped dataframe, returning a new dataframe
+  - This makes `combining` data later easy
+  - The `filter()` function takes in a function which it applies to each group dataframe and returns either a True or a False, depending upon whether that group should be included in the results
 
 - <span style="color: Red; font-weight:bold;">Scales</span>
 
-  - S
+  - We always talk about different data types and now we need to explain an important terminology called scales
+  - We have four different scales here:
+    - `Ratio scale`: Represented as float or int types.
+    - `Interval Scale`: Represented as float or int types, depending on the data
+    - `Ordinal Scale`:Can be represented as an ordered Categorical type
+    - `Nominal Scale` :Often represented as a Categorical type or object type
+  -
+  - ![](assets/1.png)
+  -
+  - ![](assets/2.png)
+  -
+  - Pandas has a number of interesting functions to deal with converting between measurement scales
+  - We can, however, tell pandas that we want to change the type to category, using the `astype()` function
+  - We can tell pandas that the data is ordered by first creating a new categorical data type with the list of the categories (in order) and the `ordered=True flag`
+  - We see that the operator works as we would expect. We can then use a certain set of mathematical operators, like `minimum`, `maximum`, etc., on the ordinal data
+  - Variables with a boolean value are typically called `dummy` variables, and pandas has a built in function called `get_dummies()` which will convert the values of a single column into multiple columns of `zeros and one`s` indicating the presence of the dummy variable
+  - Pandas has a function called `cut()` which takes as an argument some `array-like structure` like a column of a dataframe or a series
+  - It also takes a number of `bins ` to be used, and all bins are kept at equal spacing
+
+- <span style="color: Red; font-weight:bold;">Pivot Table</span>
+
+  - A pivot table is a way of summarizing data in a DataFrame for a particular purpose
+  - It makes heavy use of the aggregation function. A pivot table is itself a DataFrame, where the rows represent one variable that you're interested in, the columns another, and the cell's some aggregate value
+  - First create a new ranke column in your dataframe based on your previous knowledge where institutions with world ranking `1-100` are categorized as `first` tier and those with world ranking `101 - 200` are `second` tier, ranking `201 - 300` are `third` tier, `after 301` is `other` top universities
+  - A pivot table allows us to pivot out one of these columns a new column headers and compare it against another column as row indices
+  - The `NaN` values indicate that Argentia has only observations in the "Other Top Unversities" category
+  - Pivot tables aren't limited to one function that you might want to apply
+  - You can pass a named parameter, aggfunc, which is a list of the different functions to apply
+  - We can also `summarize` the values within a given top level column
+  - A pivot table is just a `multi-level dataframe`, and we can access series or cells in the dataframe in a similar way as we do so for a regular dataframe

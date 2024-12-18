@@ -582,3 +582,30 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - You can pass a named parameter, aggfunc, which is a list of the different functions to apply
   - We can also `summarize` the values within a given top level column
   - A pivot table is just a `multi-level dataframe`, and we can access series or cells in the dataframe in a similar way as we do so for a regular dataframe
+  - A pivot table allows us to pivot out one of these columns a new column headers and compare it against another column as row indices
+  - pivot tables aren't limited to one function that you might want to apply
+  - You can pass a named parameter, aggfunc, which is a list of the different functions to apply, and pandas will provide you with the result using hierarchical column names
+  - we can also summarize the values within a given top level column we can indicate that we want pandas to provide `marginal` values
+  - A pivot table is just a `multi-level dataframe`, and we can access series or cells in the dataframe in a similar way as we do so for a regular dataframe
+  - the `idxmax()` function isn't special for pivot tables, it's a built in function to the Series object
+  - If you want to achieve a different shape of your pivot table, you can do so with the `stack` and `unstack` functions
+
+- <span style="color: Red; font-weight:bold;">Date/Time Functionality</span>
+
+  - Manipulating dates and time is quite flexible in Pandas and thus allows us to conduct more analysis such as `time series analysis`
+  - Pandas has four main time related classes:
+    - `Timestamp`
+    - `DatetimeIndex`
+    - `Period`
+    - `PeriodIndex`
+  - Timestamp also has some useful attributes, such as `isoweekday()`, which shows the weekday of the timestamp
+  - `Period` represents a single time span, such as a specific day or month
+  - Period objects represent the full `timespan` that you specify. `Arithmetic` on period is very easy and intuitive
+  - The index of a timestamp is DatetimeIndex
+  - Using pandas `to_datetime`, pandas will try to convert these to Datetime and put them in a standard format
+  - to_datetime also has options to change the date parse order (`dayfirst=True`)
+  - `Timedeltas` are differences in times. This is not the same as a a period, but conceptually similar
+  - `Offset` is similar to timedelta, but it follows specific calendar duration rules
+  - In `data_range`, we have to either specify the start or end date. If it is not explicitly specified, by default, the date is considered the start date. Then we have to specify number of periods, anda frequency
+  - Suppose we want to know what the mean count is for each month in our DataFrame. We can do this using `resample`
+  - resample. Converting from a higher frequency from a lower frequency is called `downsampling`

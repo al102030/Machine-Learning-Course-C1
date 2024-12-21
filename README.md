@@ -567,7 +567,6 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - We can, however, tell pandas that we want to change the type to category, using the `astype()` function
   - We can tell pandas that the data is ordered by first creating a new categorical data type with the list of the categories (in order) and the `ordered=True flag`
   - We see that the operator works as we would expect. We can then use a certain set of mathematical operators, like `minimum`, `maximum`, etc., on the ordinal data
-  - Variables with a boolean value are typically called `dummy` variables, and pandas has a built in function called `get_dummies()` which will convert the values of a single column into multiple columns of `zeros and one`s` indicating the presence of the dummy variable
   - Pandas has a function called `cut()` which takes as an argument some `array-like structure` like a column of a dataframe or a series
   - It also takes a number of `bins ` to be used, and all bins are kept at equal spacing
 
@@ -609,3 +608,34 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - In `data_range`, we have to either specify the start or end date. If it is not explicitly specified, by default, the date is considered the start date. Then we have to specify number of periods, anda frequency
   - Suppose we want to know what the mean count is for each month in our DataFrame. We can do this using `resample`
   - resample. Converting from a higher frequency from a lower frequency is called `downsampling`
+
+- <span style="color: Red; font-weight:bold;">Basic Statistical Testing</span>
+
+  - We're going to talk about `hypothesis testing`, `statistical significance`, and using scipy to run student's t-tests
+  - The goal of `hypothesis testing` is to determine if, for instance, the two different conditions we have in an experiment have resulted in different impacts
+  - `scipy` includes `numpy` and `pandas`, but also plotting libraries such as `matplotlib`, and a number of scientific library functions as well
+  - When we do `hypothesis testing`, we actually have `two statements` of interest:
+    - The first is our actual explanation, which we call the `alternative hypothesis`
+    - The second is that the explanation we have is not sufficient, and we call this the `null hypothesis`
+  - The SciPy library contains a number of different statistical tests and forms a basis for hypothesis testing in Python and
+  - We have to choose a significance level as a threshold for how much of a chance we're willing to accept. This significance level is typically called `alpha`
+  - We're going to use the ‍`ttest_ind()` function which does an `independent t-test` (meaning the populations are not related to one another)
+  - `P-values` have come under fire recently for being **insuficient** for telling us enough about the interactions which are happening, and two other techniques, `confidence intervalues` and `bayesian analyses`, are being used more regularly.
+
+## <span style="color: #ebce14;">Applied Plotting, Charting & Data Representation in Python</span>
+
+### <span style="color: #44cecc;">Introduction</span>
+
+- <span style="color: Red;">What is it?</span>
+
+  - The main topic of this course is understanding how to communicate data more clearly to the various stakeholders who are interested in the data
+  - This Part is about specific techniques which are part of a broad subject of information visualization
+  - `Matplotlib` isn't the only way to create visual artifacts in Python, but it's the basis for some emerging new web tools such as `Seaborn` and `Bokeh` and acts as a solid foundation for our discussions
+
+### <span style="color: #44cecc;">Matplotlib</span>
+
+- <span style="color: Red;">Creating and Customizing Our First Plots</span>
+
+  - First of All install matplotlib using pipenv command
+  - Import the library and create axises and arrays
+  -

@@ -632,10 +632,59 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - This Part is about specific techniques which are part of a broad subject of information visualization
   - `Matplotlib` isn't the only way to create visual artifacts in Python, but it's the basis for some emerging new web tools such as `Seaborn` and `Bokeh` and acts as a solid foundation for our discussions
 
+- <span style="color: Red;">Visualization of Data Benefits</span>
+
+  - Understanding Patterns and Trends
+  - Simplifying Complex Data
+  - Effective Presentation
+  - Comparisons
+  - Identifying Relationships
+
+- <span style="color: Red;">Matplotlib Specific Advantages</span>
+- `Customization`: Matplotlib offers extensive customization options, allowing you to tailor your plots to your specific needs and preferences.
+
+- `Integration`: It integrates well with other Python libraries like NumPy and pandas, making it a powerful tool in the data analyst’s toolkit.
+
+- `Wide Range of Plots`: From simple line and bar charts to complex 3D plots and histograms, Matplotlib provides a wide variety of plotting options.
+
 ### <span style="color: #44cecc;">Matplotlib</span>
 
-- <span style="color: Red;">Creating and Customizing Our First Plots</span>
+- <span style="color: Red;">Line Graph</span>
 
+  - Check https://matplotlib.org/
   - First of All install matplotlib using pipenv command
   - Import the library and create axises and arrays
-  -
+  - Create your first plot using `.plot()` method and show the result
+  - Check the code inside the terminal and explain options of final result window
+  - You can add title to your plot
+  - Also we can add lable for each axises to make it more clear and easy to understand
+  - Add another line to your plot using new list of data as x and y
+  - In this case out x axis is completely the same in both line graphs
+  - We can remove extra data to make code more clear and shorter so we need just on x axes data
+  - To define which line represent which data we can use `legend` and we have two ways to do that
+  - First using `legend()` method using a list of legends as argument for it
+  - This way is not the best way and you have to remember the order of data to find the correct legend
+  - The second way is using the `lable` argument in each plot() method when call them
+  - Check documents for format strings and how to color your plot optionaly (srch=matplotlib.pyplot.plot)
+  - The general formula `fmt = '[marker][line][color]'`
+  - Aslo we can add marker to our plot to make it more detiled
+  - We can use hex value for colors like Css and by setting the `linewidth` argument to a number bigger than `1` we can increase the thickness of the line
+  - By using `grid()` method we can add a grid to our plot to have better vision on it
+  - To change our plot style we can print the avilable syles by using `available` attribute
+  - `plt.style.use()` is the method that can change the plot style for us
+  - Remove your styles and check other sytem styles
+  - Test `xkcd()` method to change style to a comic format
+  - By using `savefig()` method we can save our plot in current directory
+
+- <span style="color: Red;">Bar Graph</span>
+
+  - By using `.bar()` method we can create a nice bar chart
+  - We can combine charts by calling theme together
+  - Using bars together can cause an issue and an overlapping is going to happen and `numpy` can solve this problem
+  - `arange()` method can create a array formt x index for us whcih we can shift it to left and right
+  - By defining a width and pass it ass an argument to bar method and also shift your first bar using it we can solve the problem
+  - It can cause another issue and convert our default x axis real data to indexes
+  - Load data from CSV file using csv library
+  - By using `barh()` method you can transpose your barchart horizontally
+  - Now you have to change the bar labels
+  - Do all the things using Pandas library

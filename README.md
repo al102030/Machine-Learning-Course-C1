@@ -688,3 +688,55 @@ Data Science is the backbone of understanding, analyzing, and making sense of da
   - By using `barh()` method you can transpose your barchart horizontally
   - Now you have to change the bar labels
   - Do all the things using Pandas library
+
+- <span style="color: Red;">Pie Charts</span>
+
+  - Pie charts show us the proportion that each categorie contributes to a whole
+  - `.tight_layout()` method gives us some default padding
+  - By using `.pie()` method we can create a nice pie chart
+  - Numbers dosen't need to be a sum of 100 and the chart creates proportions based on the 100
+  - `wedgeprops` can add a separtor to the pies
+  - For `data`, `label`, and `color` we need to give a list to the method separatelly
+  - Pie chart is good for about 5 different categories of data and not more
+  - To emphasize on a specific pie we can use `explode` argument
+  - By passing `shadow` argument to our chart we can create a nice shadow effect for it
+  - By passing `startangle` argument to our chart we can rotate our chart to a desire direction
+  - `autopct` can add default percentage to our chart
+
+- <span style="color: Red;">Stack Plot</span>
+
+  - A `stack plot` is a type of plot that displays the evolution of several variables over time by stacking filled areas on top of each other
+  - By passing labels and use legend() method we can add items to lable to the chart
+  - We can define the location of the legend
+  - Also we can define the color for each of the players in this chart
+  - Another common usecase for stackplot is visualize something that maintains a constant total
+  - We can define the location of the legend by a tuple
+
+- <span style="color: Red;">Filling Area on Line Plot</span>
+
+  - We can fill entire area under a specific python ploted data by using `.fill_between()` method
+  - By changing the `aplpha` we can change the transparncy of filled plot
+  - We can change the lowest part of filled plot to another point by setting `y2` argument
+  - We can apply some condition on filling of a line graph by using `where` and `interpolate` arguments
+  - We can also fill between two graphs by changing in conditions inside the `fill_between()` method
+  - To add label in the plot legend for filled area we can use lable inside the method
+
+- <span style="color: Red;">Histogram</span>
+
+  - A `histogram` is a graphical representation of data that groups values into bins and displays the frequency of data points in each bin
+  - By using `.hist()` method we can create a nice histogram
+  - We can give the actual bins to the histogram method as a list of bins
+  - We can show our data in logarithmic scale by using `log` argument
+  - By using `axvline()` method we can add a vertical line to our histogram (e.g. to show median age)
+  - Also we can define the thickness of this line
+
+- <span style="color: Red;">Scatter Plot</span>
+
+  - To show relationship between two sets of values and see if they are correlated we can use `Scatter` plot
+  - By using `s` argument we can change the size of dots (it can be a list of sizes)
+  - By using `c` argument we can change the color of dots (it can be a list of colors)
+  - By using `marker` argument we can change the shape of dots
+  - By using `cmap` argument we can change the color of dots when we give a list of colors to our plot method
+  - Also we can add a color bar to our plot using `colorbar()` method
+
+### <span style="color: #44cecc;">Good Luck</span>
